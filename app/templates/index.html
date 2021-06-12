@@ -1,5 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Hola Mundo</h1>
+    <h1 style="text-align: center;">¡Bienvenido a la plataforma!</h1>
+    <p style="font-size: 30px;">Opciones:</p>
+    <div><a href="{{url_for('cursos_index')}}">+Cursos</a></div>
+    <br>
+    <div><p style="margin:0%">+Calendario</p></div>
+    <br>
+    <div><p style="margin:0%">+Horarios</p></div>
+    <br>
+    <div><p style="margin:0%">+Contacto</p></div>
 {% endblock %}
+

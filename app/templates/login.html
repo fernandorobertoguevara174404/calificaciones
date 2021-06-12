@@ -1,14 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Iniciar Sesión</h1>
-    <form action="" method="post" novalidate>
+    <h1 style="text-align: center;">Iniciar Sesión</h1>
+    <form style="
+    display: flex; 
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 400px;
+    margin-right: 400px;" action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         {{ form.email.label }}
         {{ form.email(size=32) }}
+        <br>
         {{ form.password.label }}
         {{ form.password(size=32) }}
-        {{ form.remember_me() }}
+        <br>
+        <p>Remember me  {{ form.remember_me() }} </p>
+        <br>
         {{ form.submit() }}
 
     </form>

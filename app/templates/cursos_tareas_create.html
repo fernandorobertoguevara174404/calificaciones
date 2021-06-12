@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 style="text-align: center;">Tareas para el curso {{curso.name}}</h1>
+    <form style="
+        display: flex; 
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 400px;
+    margin-right: 400px;" action="" method="post" novalidate>
+
+        {{ form.hidden_tag() }}
+        {{ form.titulo.label }}
+        {{ form.titulo(size=32) }}
+        {{ form.fecha_de_creacion.label }}
+        {{ form.fecha_de_creacion(size=32) }}
+        {{ form.fecha_de_entrega.label }}
+        {{ form.fecha_de_entrega(size=32) }}
+        {{ form.descripcion.label }}
+        {{ form.descripcion(size=32) }}
+        {{ form.puntos.label }}
+        {{ form.puntos(size=32) }}
+        <br>
+        {{ form.submit() }}
+
+    </form>
+    <a style="text-align: center;" href="{{url_for('cursos_tareas_index', id=curso.id)}}">Volver</a>
+{% endblock %}

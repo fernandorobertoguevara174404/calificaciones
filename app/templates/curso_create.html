@@ -1,11 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Crear un curso</h1>
-    <form action="" method="post" novalidate>
+    <h1 style="text-align: center;">Crear un curso</h1>
+    <form style="
+        display: flex; 
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 400px;
+    margin-right: 400px;" action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         {{ form.name.label }}
         {{ form.name(size=32) }}
+        <br>
         {{ form.submit() }}
 
     </form>
