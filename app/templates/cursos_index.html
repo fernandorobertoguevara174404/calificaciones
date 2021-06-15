@@ -3,12 +3,15 @@
 {% block content %}
 <div class="row mt-3">
     <h1 class="col">Cursos</h1>
-{% if current_user.profesor %}
+    <div>
+        <a style="text-align: center;" href="{{url_for('index')}}">Regresar a Inicio</a>
+        <br>
+    </div>
     <div class="col text-end mt-auto"><a class="btn btn-primary" href="{{url_for('cursos_create')}}">Crear un curso</a>    </div>
-{% endif %}    
+
 </div>
 
-{% if current_user.profesor %}
+
     <h2>Cursos en los que eres profesor</h2>
 
     <div class="container">
@@ -30,7 +33,7 @@
             </tbody>
         </table>
     </div>
-{% endif %}
+
 
 <h2>Cursos en los que eres estudiante</h2>
 <div class="container">

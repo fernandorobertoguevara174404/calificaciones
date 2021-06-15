@@ -8,7 +8,7 @@ from app import db
 @app.route("/")
 @login_required
 def index():
-    if current_user.admin or current_user.profesor:
+    if current_user.is_authenticated: 
         return render_template("index.html")
     else:
         return redirect(url_for("cursos_index"))
@@ -153,8 +153,6 @@ def cursos_tareas_create(id):
 def cursos_tareas_index(id):
     curso = Curso.query.filter_by(id=id).first()
     tareas = Tarea.query.filter_by(id_curso=id).all()
-    for tarea in tareas:
-        print(tarea.calificaciones.calificacion)
     return render_template("cursos_tareas_index.html", curso=curso, tareas=tareas)
 
 
