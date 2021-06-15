@@ -10,3 +10,4 @@ def create_admin():
         u.create_admin(app.config.get('ADMIN_PASS'))
         db.session.add(u)
         db.session.commit()
+        
